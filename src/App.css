@@ -1,0 +1,265 @@
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style général */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f5f9;
+  color: #333;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  padding: 1rem 2rem;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 100%; /* Prend toute la largeur */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+}
+
+.links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #ffd700;
+}
+
+/* Pages */
+.home, .cart, .contact, .product-detail {
+  padding: 2rem;
+  margin-top: 80px; /* Décale le contenu pour que la navbar ne le chevauche pas */
+  width: 100%; /* Prend toute la largeur */
+}
+
+/* Produits */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Les cartes de produits occupent la largeur disponible */
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%; /* Prend toute la largeur */
+  padding-bottom: 3rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.product-card p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%; /* Prend toute la largeur */
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+}
+
+/* Panier */
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cart-item img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.cart-item h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* Produits */
+/* Produits */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(5, 250px); /* 4 colonnes de 250px chacune */
+  gap: 2rem;
+  margin-top: 80px; /* Décale le contenu sous la navbar */
+  height: calc(100vh - 80px); /* Fait en sorte que la section des produits occupe toute la hauteur restante après la navbar */
+  padding: 2rem 1rem;
+  overflow-y: auto; /* Permet le défilement si nécessaire */
+  justify-content: center; /* Centrer la grille si nécessaire */
+}
+
+.product-card {
+  background: rgb(187, 186, 186);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s;
+  height: 300px; /* Hauteur fixe pour chaque carte */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px; /* Hauteur fixe pour l'image */
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.product-card p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 1200px) {
+  .products-container {
+    grid-template-columns: repeat(3, 250px); /* 3 produits par ligne sur des écrans moyens */
+  }
+}
+
+@media (max-width: 900px) {
+  .products-container {
+    grid-template-columns: repeat(2, 250px); /* 2 produits par ligne sur des écrans plus petits */
+  }
+}
+
+@media (max-width: 600px) {
+  .products-container {
+    grid-template-columns: 1fr; /* 1 produit par ligne sur les petits écrans */
+  }
+}
+
+
+.categories {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.categories button {
+  padding: 0.6rem 1rem;
+  border: 1px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.categories button:hover,
+.categories button.active {
+  background: #667eea;
+  color: white;
+}
+
+.payment-section {
+  background: white;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.payment-methods label {
+  font-size: 1rem;
+  color: #444;
+}
+
+.pay-btn {
+  padding: 0.8rem 2rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pay-btn:hover {
+  background: #5a67d8;
+}
