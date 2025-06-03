@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import products from '../data/products';
+import products from './product';
 
 function Home({ addToCart }) {
   const [selectedCategory, setSelectedCategory] = useState('Tous');
