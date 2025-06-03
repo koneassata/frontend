@@ -10,7 +10,7 @@ export const createPayment = (amount) => async (dispatch) => {
   dispatch({ type: CREATE_PAYMENT_REQUEST });
 
   try {
-    const response = await fetch('http://localhost:5000/create-payment', {
+    const response = await fetch('https://backend-61io.onrender.com/create-payment', {
       method: 'POST',
       body: JSON.stringify({ amount }),
       headers: {

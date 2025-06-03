@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function BackendTest() {
   useEffect(() => {
-    axios.get('http://localhost:5000/api/test')
+    axios.get('https://backend-61io.onrender.com/api/test')
       .then(res => {
         console.log(res.data.message);
         alert(res.data.message); // affichage pour l'utilisateur
