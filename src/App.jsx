@@ -15,7 +15,6 @@ import Navbar from "./components/Navbar";
 
 import { useState, useEffect } from 'react';
 import './App.css';
-import Exemple from './pages/exemple';
 
 function App() {
   const [cartItems, setCartItems] = useState(() => {
@@ -57,9 +56,7 @@ function App() {
           <Route path="/cart" element={<Cart cartItems={cartItems} removeFromCart={removeFromCart} />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/payment-result" element={<PaymentResult />} />
-          <Route path="/Exemple" element={<Exemple />} />
-
-    
+          {/* <Route path="/Exemple" element={<Exemple />} /> */}
         </Routes>
       </Router>
     </Provider>

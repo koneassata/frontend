@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchAllProducts } from '../actions/productActions';
 
-const Exemple = () => {
+export const Exemple = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -27,5 +27,3 @@ const Exemple = () => {
     </div>
   );
 };
-
-export default Exemple;
